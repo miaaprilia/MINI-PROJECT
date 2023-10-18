@@ -6,15 +6,18 @@ Feature: Login User
   Background:
     Given I set API endpoint valid for login user
 
-  #Scenario Positive
-  Scenario: As a user I can login with a valid credentials
+  #ScenarioPositive
+  Scenario Outline: As a user I can login with a valid credentials
     When I enter a valid email
     And I enter a valid password
-    And I send request to login user
+    And I send request to login user "<email>" and "<password>"
     Then I received status code 200 OK login user
     And I received token login user data response
+    Examples:
+      | email                    | password |
+      | miaaprilia2803@gmail.com | test     |
 
-  #Scenario Negative
+  #ScenarioNegative
   Scenario: As a user I can't login without path
     Given I set API endpoint invalid for login user without the path
     When I send request to login user no path

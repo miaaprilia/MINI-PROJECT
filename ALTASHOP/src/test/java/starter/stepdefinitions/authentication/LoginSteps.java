@@ -3,8 +3,11 @@ package starter.stepdefinitions.authentication;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import net.thucydides.core.annotations.Steps;
+import starter.user.authentication.Login;
 
-public class Login {
+public class LoginSteps {
     @Steps
     Login login;
 
@@ -23,9 +26,9 @@ public class Login {
         login.enterValidPassword();
     }
 
-    @And("I send request to login user")
-    public void sendRequestValidLoginUser() {
-        login.sendRequestValidLoginUser();
+    @And("I send request to login user {String} and {String}")
+    public void sendRequestValidLoginUser(String email, String password) {
+        login.sendRequestValidLoginUser(email, password);
     }
 
     @Then("I received status code 200 OK login user")

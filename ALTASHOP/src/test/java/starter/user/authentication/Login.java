@@ -1,11 +1,20 @@
 package starter.user.authentication;
 
+import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.core.annotations.Step;
+import org.json.JSONObject;
+import starter.utils.GenerateToken;
+import starter.utils.JsonSchema;
+import starter.utils.JsonSchemaHelper;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
+
 public class Login {
-    private static final String url = "https://fakestoreapi.com/";
+    private static final String url = "https://altashop-api.fly.dev/api";
 
     @Step("I set API endpoint valid for login user")
     public String setAPIEndpointValidLoginUserPath() {
-        return url + "auth/login";
+        return url + "/auth/login";
     }
 
     @Step("I enter a valid email")
@@ -16,9 +25,16 @@ public class Login {
     public void enterValidPassword() {
     }
 
-    @Step("I send request to login user")
-    public void sendRequestValidLoginUser() {
+    @Step ("I send request to login user {String} and {String}")
+    public void sendRequestValidLoginUser(String email, String password) {
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("email", email);
+        requestBody.put("password", password);
+        String token = GenerateToken.generateToken();
         SerenityRest.given()
+                .header("Content-Type", "application/json")
+                .header("Authorization", "Bearer " + token)
+                .body(requestBody.toString())
                 .post(setAPIEndpointValidLoginUserPath());
     }
 
@@ -30,7 +46,7 @@ public class Login {
     @Step("I received token login user data response")
     public void receivedTokenLoginUserDataResponse() {
         JsonSchemaHelper helper = new JsonSchemaHelper();
-        String schema = helper.getResponseSchema(JsonSchema.Login_User_Response_Schema);
+        String schema = helper.getResponseSchema(JsonSchema.Login_Response_Schema);
         restAssuredThat(response -> response.body(matchesJsonSchema(schema)));
     }
 
