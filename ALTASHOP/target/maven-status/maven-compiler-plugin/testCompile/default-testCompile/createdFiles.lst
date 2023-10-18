@@ -1,0 +1,10 @@
+starter/CucumberTestSuite.class
+starter/utils/FileUtils.class
+starter/utils/JsonSchema.class
+starter/stepdefinitions/authentication/LoginSteps.class
+starter/user/products/GetAllProducts.class
+starter/user/authentication/Login.class
+starter/stepdefinitions/products/GetAllProductsSteps.class
+starter/hook/BeforeHookLogin.class
+starter/utils/GenerateToken.class
+starter/utils/JsonSchemaHelper.class

@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login User","As a user I can't login if I don't fill in the email request","PENDING","2023-10-18T18:28:24.584949+07:00[Asia/Jakarta]","0.0","0.06"
+"Login User","As a user I can't login if I don't fill in the password request","PENDING","2023-10-18T18:28:24.661553+07:00[Asia/Jakarta]","0.0","0.07"

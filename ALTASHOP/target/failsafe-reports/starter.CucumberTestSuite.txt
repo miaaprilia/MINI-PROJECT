@@ -1,0 +1,196 @@
+-------------------------------------------------------------------------------
+Test set: starter.CucumberTestSuite
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 7.615 s <<< FAILURE! - in starter.CucumberTestSuite
+As a user I can login with a valid credentials(Login User)  Time elapsed: 2.162 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException
+Caused by: java.lang.UnsupportedOperationException: Cannot define class using reflection: Unable to make protected java.lang.Package java.lang.ClassLoader.getPackage(java.lang.String) accessible: module java.base does not "opens java.lang" to unnamed module @603ee946
+
+As a user I can't login without path(Login User)  Time elapsed: 0.085 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: Could not initialize class net.serenitybdd.rest.utils.RestSpecificationFactory
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.UnsupportedOperationException: Cannot define class using reflection: Unable to make protected java.lang.Package java.lang.ClassLoader.getPackage(java.lang.String) accessible: module java.base does not "opens java.lang" to unnamed module @603ee946 [in thread "main"]
+
+As a user I can't login if I don't fill in the login request(Login User)  Time elapsed: 0.073 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: Could not initialize class net.serenitybdd.rest.utils.RestSpecificationFactory
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.UnsupportedOperationException: Cannot define class using reflection: Unable to make protected java.lang.Package java.lang.ClassLoader.getPackage(java.lang.String) accessible: module java.base does not "opens java.lang" to unnamed module @603ee946 [in thread "main"]
+
+As a user I can't login if I don't fill in the email request(Login User)  Time elapsed: 0.127 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'I sent a request to the login user "<email>" and "<password>"' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("I sent a request to the login user {string} and {string}")
+public void i_sent_a_request_to_the_login_user_and(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+As a user I can't login if I don't fill in the password request(Login User)  Time elapsed: 0.081 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'I sent a request to the login user "<email>" and "<password>"' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("I sent a request to the login user {string} and {string}")
+public void i_sent_a_request_to_the_login_user_and(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+As a user I can't login with an invalid email(Login User)  Time elapsed: 0.083 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: Could not initialize class net.serenitybdd.rest.utils.RestSpecificationFactory
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.UnsupportedOperationException: Cannot define class using reflection: Unable to make protected java.lang.Package java.lang.ClassLoader.getPackage(java.lang.String) accessible: module java.base does not "opens java.lang" to unnamed module @603ee946 [in thread "main"]
+
+As a user I can't login with an invalid password(Login User)  Time elapsed: 0.086 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: Could not initialize class net.serenitybdd.rest.utils.RestSpecificationFactory
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.UnsupportedOperationException: Cannot define class using reflection: Unable to make protected java.lang.Package java.lang.ClassLoader.getPackage(java.lang.String) accessible: module java.base does not "opens java.lang" to unnamed module @603ee946 [in thread "main"]
+
+As a user I can login with a valid credentials(Register User)  Time elapsed: 0.072 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'I set API endpoint valid for register user' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("I set API endpoint valid for register user")
+public void i_set_api_endpoint_valid_for_register_user() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I enter a valid fullname")
+public void i_enter_a_valid_fullname() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I send request to login user {string} and {string} and {string}")
+public void i_send_request_to_login_user_and_and(String string, String string2, String string3) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+As a user I can't login without path(Register User)  Time elapsed: 0.03 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'I set API endpoint valid for register user' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("I set API endpoint valid for register user")
+public void i_set_api_endpoint_valid_for_register_user() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("I received error message {string} format HTML response")
+public void i_received_error_message_format_html_response(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+As a user I can't login if I don't fill in the login request(Register User)  Time elapsed: 0.036 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'I set API endpoint valid for register user' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("I set API endpoint valid for register user")
+public void i_set_api_endpoint_valid_for_register_user() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I am not to fill in the login request")
+public void i_am_not_to_fill_in_the_login_request() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I sent a request to the login user to fill in the username & password")
+public void i_sent_a_request_to_the_login_user_to_fill_in_the_username_password() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("I received error message {string} response")
+public void i_received_error_message_response(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+As a user I can't login with an invalid username(Register User)  Time elapsed: 0.037 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'I set API endpoint valid for register user' and 5 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("I set API endpoint valid for register user")
+public void i_set_api_endpoint_valid_for_register_user() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I fill in an invalid username")
+public void i_fill_in_an_invalid_username() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I filled in a valid password")
+public void i_filled_in_a_valid_password() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I sent a request the login user")
+public void i_sent_a_request_the_login_user() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("I received status code {int} Unauthorized in request login user")
+public void i_received_status_code_unauthorized_in_request_login_user(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("I received an error message {string} response")
+public void i_received_an_error_message_response(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+As a user I can't login with an invalid password(Register User)  Time elapsed: 0.044 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'I set API endpoint valid for register user' and 5 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("I set API endpoint valid for register user")
+public void i_set_api_endpoint_valid_for_register_user() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I filled in a valid username")
+public void i_filled_in_a_valid_username() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I filled in an invalid password")
+public void i_filled_in_an_invalid_password() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("I sent a request the login user")
+public void i_sent_a_request_the_login_user() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("I received status code {int} Unauthorized in request login user")
+public void i_received_status_code_unauthorized_in_request_login_user(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("I received an error message {string} response")
+public void i_received_an_error_message_response(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+As a user I can get all product with valid path(Get All Products)  Time elapsed: 0.089 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: Could not initialize class net.serenitybdd.rest.utils.RestSpecificationFactory
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.UnsupportedOperationException: Cannot define class using reflection: Unable to make protected java.lang.Package java.lang.ClassLoader.getPackage(java.lang.String) accessible: module java.base does not "opens java.lang" to unnamed module @603ee946 [in thread "main"]
+
+As a user I can't get all product without path(Get All Products)  Time elapsed: 0.074 s  <<< ERROR!
+net.serenitybdd.core.exceptions.SerenityManagedException: Could not initialize class net.serenitybdd.rest.utils.RestSpecificationFactory
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.UnsupportedOperationException: Cannot define class using reflection: Unable to make protected java.lang.Package java.lang.ClassLoader.getPackage(java.lang.String) accessible: module java.base does not "opens java.lang" to unnamed module @603ee946 [in thread "main"]
+

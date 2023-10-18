@@ -1,0 +1,10 @@
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/user/authentication/Login.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/hook/BeforeHookLogin.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/utils/FileUtils.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/CucumberTestSuite.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/utils/GenerateToken.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/stepdefinitions/authentication/LoginSteps.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/utils/JsonSchemaHelper.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/stepdefinitions/products/GetAllProductsSteps.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/user/products/GetAllProducts.java
+/Users/miaapriliasatya/IdeaProjects/ALTASHOP/src/test/java/starter/utils/JsonSchema.java

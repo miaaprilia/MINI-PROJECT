@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Themes</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            })
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                {
+                    searching: false,
+                    ordering: false,
+                    paging: false,
+                    info: false
+                }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Api","type":"theme","href":"097b48750ce2987b1b8c5e1601936339bb36214e1269675cfdfc5a35c6b9f8f9.html","nodes":[{"text":"Authentication","type":"capability","href":"777b7038ee901f1177f5a5be937e40799792838ee29a5bb587523d471d22a27f.html","nodes":[{"text":"Get user information","type":"feature","href":"aad10e5d78dc89867a9a3bf7c8a38c738c460c25f57f1f50d94e08ac9b57d1d4.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Login User","type":"feature","href":"dcaf1938b9ddf2da32e3ba81f76c60e6d7f8fada9e681ab7f566c3f7d71450f1.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e7 scenarios\u003c/span\u003e"]},{"text":"Register User","type":"feature","href":"86c8a65e61a456adb0660effa9aed267134d0e6f305b238110f5be63bdeb06c5.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e5 scenarios\u003c/span\u003e"]}],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-exclamation-triangle-fill error-icon \u0027 title\u003d\u0027ERROR\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e3 features\u003c/span\u003e"]},{"text":"Hello","type":"capability","href":"700c3ee50eadbc01c7b798754be6d2e6833855b275a8d52d48ad059949aabf01.html","nodes":[{"text":"Index","type":"feature","href":"3f2c247ca597df5ee23674747529441a9499c7906469d2ff369ba4eebeb8bba7.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]}],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e1 feature\u003c/span\u003e"]},{"text":"Orders","type":"capability","href":"99ab04e502af9bac8ab3f043e70e57bbb695fd66ca73a23cdb99c9093f61abde.html","nodes":[{"text":"Create new order","type":"feature","href":"3f4bf9795f4fcdfee0aaf044e80e00d214f580cef863f827e9b6514e11b1a715.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Get all orders","type":"feature","href":"ab316b364518b32c31c88d510c95c788c62b6bb72f923f4eb3a6f201ee81174a.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Get order by","type":"feature","href":"d8ddb388507ace593e2995624f666c5481abacf100f3e6c4478c454687caec38.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]}],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e3 features\u003c/span\u003e"]},{"text":"Product categories","type":"capability","href":"a1b243d30e7cc4de2f19b7bac335da47cf278402acc5a30eeb8e8920fa99f8cd.html","nodes":[{"text":"Create new category","type":"feature","href":"c12ae8c5c7c7d49dc8376a2d60967f2948881a1de3d133c7d5f6ab4bc63ca679.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Delete category by","type":"feature","href":"c4b9ae5979cf17d5b4fb5ceefa89f7d61dd00776bc820e66852fd0abca1cd15f.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Get all categories","type":"feature","href":"f6c907e50488b85e1ea94e98fdec18e6e26c92190fa5aff0eb2729b57ace994c.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Get category by","type":"feature","href":"c427b4787221c2d40f334b8399947dd880707f399b94bd6715d7b7d5e0b36f07.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]}],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e4 features\u003c/span\u003e"]},{"text":"Products","type":"capability","href":"4aba82b65fb252e6e1d2f39384be14a99c376c1a52bb63d7c3b96b5b5a2015a1.html","nodes":[{"text":"Assign product rating","type":"feature","href":"67163e3234b542e557f821ee70a91b32421db0bde3b80706f880a3d1cf5f206a.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Create comment for product","type":"feature","href":"bbe6274e9ad526cee8bbc16802bc1ad1af22fe6a90ee126b85679ea997feaa7f.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Create new product","type":"feature","href":"aa6a0f9b2823780d3f1562e19254e7ef9633f49f3d64cf4c8fa032b767b633b3.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Delete product by","type":"feature","href":"31a63653667eab7b39ba4a67f4cc772c58c329423cc30c7ebe732f3c0c276045.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Get All Products","type":"feature","href":"fcc482d0480d76c5799cb4bc84972f294502c30ce4e5dc1a061dfcb30ecd0617.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-exclamation-triangle-fill error-icon \u0027 title\u003d\u0027ERROR\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e2 scenarios\u003c/span\u003e"]},{"text":"Get product by","type":"feature","href":"6cc2f17ec02429791338b84f09a58ce1b5c85521ec10a460461c37821e67169d.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Get product comments","type":"feature","href":"0a20471c805826d9103a218787f64440a5d1516037bb9af08303456a0188f38e.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]},{"text":"Get product ratings","type":"feature","href":"91b96ad1da3186ca8ad5cf1e45f066b71b6361ad8513a9518dfe71cc0926d866.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e",""]}],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-exclamation-triangle-fill error-icon \u0027 title\u003d\u0027ERROR\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e8 features\u003c/span\u003e"]}],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-exclamation-triangle-fill error-icon \u0027 title\u003d\u0027ERROR\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e5 capabilities\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                levels: 10,
+                showTags: true,
+                expandIcon: "bi bi-journal-plus",
+                collapseIcon: "bi bi-journal-minus",
+                emptyIcon: "bi bi-journal"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                    > <span class="truncate-40">Api</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 18-10-2023 18:28</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+            <div class=row">
+                <div class="col-sm-12">
+                    <div>
+                        <div clas="table">
+                            <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <span>
+                                            <h2><i class="bi bi-book"></i> Theme: Api</h2>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <!-- Requirements result tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#specs"><i class="bi bi-journal-text"></i> Specifications</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#results"><i class="bi bi-speedometer"></i> Test Results</a>
+                            </li>
+                        </ul>
+
+                        <!-- Specifications and Results tabs -->
+                        <div class="card border">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div id="specs" class="tab-pane fade in active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h3>Feature Coverage By Scenario</h3>
+
+                                                <!-- REQUIREMENTS PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="requirementChart" width="300" height="300"></canvas>
+                                                    </div>
+
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <h3>Requirements Overview</h3>
+
+                                                <div id="tree"></div>
+
+                                                <!-- STATS -->
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>14</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>14</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Oct 18, 2023 18:28:22</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Oct 18, 2023 18:28:25</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>2s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>20ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>1s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>155ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>2s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+                                                <!-- END STATS -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="results" class="tab-pane fade">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h3>Feature Coverage By Scenario</h3>
+                                                <!-- TEST RESULT PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="resultChart" width="300" height="300"></canvas>
+                                                    </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
+                                                <!-- Severity bar chart -->
+                                                <div class="chart-container" style="position: relative; width:30vw">
+                                                    <canvas id="severityChart" width="300" height="300"></canvas>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <h4><i class="bi bi-graph-up"></i> Test Performance</h4>
+
+                                                <!-- Duration bar chart -->
+                                                <div class="chart-container" style="position: relative; width:30vw">
+                                                    <canvas id="durationChart" width="300" height="300"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>14</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>2s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>14</td>
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>20ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-person"></i> Number of Manual Test Cases
+                    </td>
+                    <td>0</td>
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>1s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Oct 18, 2023 18:28:22</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>155ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Oct 18, 2023 18:28:25</td>
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>2s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+                                                <h3><i class="bi bi-gear"></i> Automated Tests</h3>
+
+                                                    <table class="scenario-result-table table" id="scenario-results">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>feature</th>
+                                                            <th class="test-name-column">Scenario</th>
+                                                            <th>Context</th>
+                                                            <th>Steps</th>
+                                                            <th>Started</th>
+                                                            <th>Total Duration</th>
+                                                            <th>Result</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                                    <tr class="scenario-result ERROR">
+                                                                        <td>
+                                                                                <a href="dcaf1938b9ddf2da32e3ba81f76c60e6d7f8fada9e681ab7f566c3f7d71450f1.html">Login User</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="64fe1b1b57e3dbbface1a491b30d07d1c5c553f15c1412e3d9b2596f73fe4440.html">1: As a user I can login with a valid credentials </a>
+                                                                                    <br/>email=miaaprilia2803@gmail.com, password=test
+                                                                        </td>
+                                                                        <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                        <td>4</td>
+                                                                        <td>18:28:22</td>
+                                                                        <td>1s 522ms</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
+                                                                                    style="display:none">ERROR</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                <tr class="scenario-result ERROR">
+                                                                    <td>
+                                                                            <a href="dcaf1938b9ddf2da32e3ba81f76c60e6d7f8fada9e681ab7f566c3f7d71450f1.html">Login User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="7de40d70673ada4445787894796bc893ac37b9d230feb060381f0363b82d8c2b.html">As a user I can't login without path</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>5</td>
+                                                                    <td>18:28:24</td>
+                                                                    <td>073ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
+                                                                                style="display:none">ERROR</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result ERROR">
+                                                                    <td>
+                                                                            <a href="dcaf1938b9ddf2da32e3ba81f76c60e6d7f8fada9e681ab7f566c3f7d71450f1.html">Login User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="0e486c84208744143a6ebf8f268371456c5b203283571409c47e45757d71c2c0.html">As a user I can't login if I don't fill in the login request</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>5</td>
+                                                                    <td>18:28:24</td>
+                                                                    <td>060ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
+                                                                                style="display:none">ERROR</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result PENDING">
+                                                                    <td>
+                                                                            <a href="dcaf1938b9ddf2da32e3ba81f76c60e6d7f8fada9e681ab7f566c3f7d71450f1.html">Login User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="7332d552d2b2d72a3f2eec4b254378272db2da3bcac52dc4a246cb3768660b7c.html">As a user I can't login if I don't fill in the email request</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>6</td>
+                                                                    <td>18:28:24</td>
+                                                                    <td>060ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span
+                                                                                style="display:none">PENDING</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result PENDING">
+                                                                    <td>
+                                                                            <a href="dcaf1938b9ddf2da32e3ba81f76c60e6d7f8fada9e681ab7f566c3f7d71450f1.html">Login User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="2a907e9614885ff4fff633c8b8e0da279869d62f7f1015fb1c5e6c8f43b4b796.html">As a user I can't login if I don't fill in the password request</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>6</td>
+                                                                    <td>18:28:24</td>
+                                                                    <td>068ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span
+                                                                                style="display:none">PENDING</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result ERROR">
+                                                                    <td>
+                                                                            <a href="dcaf1938b9ddf2da32e3ba81f76c60e6d7f8fada9e681ab7f566c3f7d71450f1.html">Login User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="40f4d4a965b81cf6333de6f14541678ec8b6caa5549ccb1f123c589e7bb9c717.html">As a user I can't login with an invalid email</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>6</td>
+                                                                    <td>18:28:24</td>
+                                                                    <td>057ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
+                                                                                style="display:none">ERROR</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result ERROR">
+                                                                    <td>
+                                                                            <a href="dcaf1938b9ddf2da32e3ba81f76c60e6d7f8fada9e681ab7f566c3f7d71450f1.html">Login User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="910f568f6aca774ce2e24d06033f3a3333d6077b58e98b09cbefa65e3fa5ee09.html">As a user I can't login with an invalid password</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>6</td>
+                                                                    <td>18:28:24</td>
+                                                                    <td>071ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
+                                                                                style="display:none">ERROR</span>
+                                                                    </td>
+                                                                </tr>
+                                                                    <tr class="scenario-result IGNORED">
+                                                                        <td>
+                                                                                <a href="86c8a65e61a456adb0660effa9aed267134d0e6f305b238110f5be63bdeb06c5.html">Register User</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="e25e10a59781c46ce116a25595d67c3475aac3843a00a257de147cd4e5517661.html">1: As a user I can login with a valid credentials </a>
+                                                                                    <br/>email=someoneme1@mail.com, password=123123, fullname=Firstname Lastname
+                                                                        </td>
+                                                                        <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                        <td>7</td>
+                                                                        <td>18:28:24</td>
+                                                                        <td>034ms</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a> <span
+                                                                                    style="display:none">IGNORED</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                <tr class="scenario-result PENDING">
+                                                                    <td>
+                                                                            <a href="86c8a65e61a456adb0660effa9aed267134d0e6f305b238110f5be63bdeb06c5.html">Register User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="709d718963494ae51c7e9bbd2e1fdb585376192a6501a4f225f2b19b7e2bb939.html">As a user I can't login without path</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>5</td>
+                                                                    <td>18:28:25</td>
+                                                                    <td>020ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span
+                                                                                style="display:none">PENDING</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result PENDING">
+                                                                    <td>
+                                                                            <a href="86c8a65e61a456adb0660effa9aed267134d0e6f305b238110f5be63bdeb06c5.html">Register User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="1fb1327890d164dfba907b4a9e7002fafa1a42029f1f7b596ca63377391fa58e.html">As a user I can't login if I don't fill in the login request</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>5</td>
+                                                                    <td>18:28:25</td>
+                                                                    <td>024ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span
+                                                                                style="display:none">PENDING</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result PENDING">
+                                                                    <td>
+                                                                            <a href="86c8a65e61a456adb0660effa9aed267134d0e6f305b238110f5be63bdeb06c5.html">Register User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="71faabd7dd6892a92ef35e375285bf35bd5b9200297b4730eac0408f12912baf.html">As a user I can't login with an invalid username</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>6</td>
+                                                                    <td>18:28:25</td>
+                                                                    <td>021ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span
+                                                                                style="display:none">PENDING</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result PENDING">
+                                                                    <td>
+                                                                            <a href="86c8a65e61a456adb0660effa9aed267134d0e6f305b238110f5be63bdeb06c5.html">Register User</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="3789d0965138c26b3a4775f388d872981ff2aef0fc56d1d0753350718d4a4bcf.html">As a user I can't login with an invalid password</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>6</td>
+                                                                    <td>18:28:25</td>
+                                                                    <td>027ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span
+                                                                                style="display:none">PENDING</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result ERROR">
+                                                                    <td>
+                                                                            <a href="fcc482d0480d76c5799cb4bc84972f294502c30ce4e5dc1a061dfcb30ecd0617.html">Get All Products</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="51f64f29f5a1689852d7a0582433e96b0b60d0ca332d36e4aedd61511025a28c.html">As a user I can get all product with valid path</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>4</td>
+                                                                    <td>18:28:25</td>
+                                                                    <td>079ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
+                                                                                style="display:none">ERROR</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result ERROR">
+                                                                    <td>
+                                                                            <a href="fcc482d0480d76c5799cb4bc84972f294502c30ce4e5dc1a061dfcb30ecd0617.html">Get All Products</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="314200d910b596c4c704b6b7e581b45416e8e0d9892899a50674cfb0124823a2.html">As a user I can't get all product without path</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Mac OS X</span> </td>
+                                                                    <td>4</td>
+                                                                    <td>18:28:25</td>
+                                                                    <td>056ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
+                                                                                style="display:none">ERROR</span>
+                                                                    </td>
+                                                                </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="bi bi-hand-index-thumb"></i> Manual Tests</h3>
+
+                                                    No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="version">Serenity BDD version 3.6.12</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Chart data -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const outcomeChartCtx = document.getElementById('resultChart');
+
+        // Options define for display value on top of bars
+        const outcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "2285ee9d13797ac4d14bc39163c9b61b3012eaff3c8b5dc01133282b73dfdf61.html" },
+            { title: 'Pending Test Cases', link: "01c237f4d55b1960e3cc2a8b79788e23437187738a585b3babdff5dea8e297a8.html" },
+            { title: 'Ignored Test Cases', link: "a51aabcd734a55b6ed6e0e62124f0e0a50dd8d65e49b45c79f7784bc7b519913.html" },
+            { title: 'Skipped Test Cases', link: "b5c48be39dcfe881dd6dfeb6f0b73f2ef624ef5fb6c1c8923408bcedee63cc85.html" },
+            { title: 'Aborted Test Cases',  link: "e8133be7f5f3e7af4d10137733e66ab2b948ed995f654e907b7b04454d751d54.html"},
+            { title: 'Failed Test Cases', link: "b81a7d2abdaacf1e8ada7b803e9fc2ee1d05d052ea02e04c82175aa59aa08de9.html"  },
+            { title: 'Broken Test Cases', link: "9deb7d3a7a9a4ad7ff9b43d2fce877b7a286017ccdf0666d6155fde9ed8eb617.html"    },
+            { title: 'Compromised Test Cases',  link: "a362d65b3e857b338108258de8b101ab2f726f5d9835dad926fb658186b90782.html" },
+        ]
+        const outcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Test Results',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 6}, {meta: 'Ignored tests', value: 1}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 7}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const outcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const outcomeChart = new Chart(outcomeChartCtx, {
+            type: 'doughnut',
+            data: outcomeData,
+            options: outcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = " "
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function clickHandler(click) {
+            const points = outcomeChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(outcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        outcomeChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END PIE CHART -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const requirementsChartCtx = document.getElementById('requirementChart');
+
+        // Options define for display value on top of bars
+        const requirementsOutcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "2285ee9d13797ac4d14bc39163c9b61b3012eaff3c8b5dc01133282b73dfdf61.html" },
+            { title: 'Pending Test Cases', link: "01c237f4d55b1960e3cc2a8b79788e23437187738a585b3babdff5dea8e297a8.html" },
+            { title: 'Ignored Test Cases', link: "a51aabcd734a55b6ed6e0e62124f0e0a50dd8d65e49b45c79f7784bc7b519913.html" },
+            { title: 'Skipped Test Cases', link: "b5c48be39dcfe881dd6dfeb6f0b73f2ef624ef5fb6c1c8923408bcedee63cc85.html" },
+            { title: 'Aborted Test Cases',  link: "e8133be7f5f3e7af4d10137733e66ab2b948ed995f654e907b7b04454d751d54.html"},
+            { title: 'Failed Test Cases', link: "b81a7d2abdaacf1e8ada7b803e9fc2ee1d05d052ea02e04c82175aa59aa08de9.html"  },
+            { title: 'Broken Test Cases', link: "9deb7d3a7a9a4ad7ff9b43d2fce877b7a286017ccdf0666d6155fde9ed8eb617.html"    },
+            { title: 'Compromised Test Cases',  link: "a362d65b3e857b338108258de8b101ab2f726f5d9835dad926fb658186b90782.html" },
+            { title: 'Undefined Test Cases',  link: "" },
+        ]
+        const requirementsOutcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Feature Coverage',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 6}, {meta: 'Ignored tests', value: 1}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 7}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const requirementsOutcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const requirementsChart = new Chart(requirementsChartCtx, {
+            type: 'doughnut',
+            data: requirementsOutcomeData,
+            options: requirementsOutcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = " "
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function reqsClickHandler(click) {
+            const points = requirementsChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length && requirementsOutcomeDetailsReports[firstPoint.index].link) {
+                const firstPoint = points[0];
+                window.open(requirementsOutcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        requirementsChartCtx.onclick = reqsClickHandler;
+    </script>
+    <!-- END PIE CHART -->
+
+    <!-- SUMMARY BAR CHART -->
+    <script>
+
+        // The Severity bar chart
+        const severityChartCtx = document.getElementById('severityChart');
+
+        // Options define for display value on top of bars
+
+        const severityDetailsReports = [
+            { title: 'Passing Scenarios', link: "2285ee9d13797ac4d14bc39163c9b61b3012eaff3c8b5dc01133282b73dfdf61.html" },
+            { title: 'Pending Scenarios', link: "01c237f4d55b1960e3cc2a8b79788e23437187738a585b3babdff5dea8e297a8.html" },
+            { title: 'Ignored Scenarios', link: "a51aabcd734a55b6ed6e0e62124f0e0a50dd8d65e49b45c79f7784bc7b519913.html" },
+            { title: 'Skipped Scenarios', link: "b5c48be39dcfe881dd6dfeb6f0b73f2ef624ef5fb6c1c8923408bcedee63cc85.html" },
+            { title: 'Aborted Scenarios',  link: "e8133be7f5f3e7af4d10137733e66ab2b948ed995f654e907b7b04454d751d54.html"},
+            { title: 'Failed Scenarios', link: "b81a7d2abdaacf1e8ada7b803e9fc2ee1d05d052ea02e04c82175aa59aa08de9.html"  },
+            { title: 'Broken Scenarios', link: "9deb7d3a7a9a4ad7ff9b43d2fce877b7a286017ccdf0666d6155fde9ed8eb617.html"    },
+            { title: 'Compromised Scenarios',  link: "a362d65b3e857b338108258de8b101ab2f726f5d9835dad926fb658186b90782.html" },
+        ]
+        const severityData = {
+            labels: ['Passing', 'Pending', 'Ignored', 'Skipped', 'Aborted', 'Failed', 'Broken', 'Compromised'],
+            datasets: [
+                {
+                    label: 'Automated',
+                    data: [0,6,1,0,0,0,7,0],
+                    backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Manual',
+                    data: [0,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.25)','rgba(165, 199, 238, 0.25)','rgba(168, 168, 168, 0.25)','rgba(238, 224, 152, 0.375)','rgba(255, 153, 102, 0.25)','rgba(255, 22, 49, 0.25)','rgba(255, 97, 8, 0.25)','rgba(255, 104, 255, 0.25)','rgba(83, 50, 168, 0.25)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+
+            ]
+        }
+        const severityOptions = {
+            responsive: true,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value === 0) {
+                            return '';
+                        } else {
+                            return value;
+                        }
+                    },
+                }
+            }
+        }
+        const severityChart = new Chart(severityChartCtx, {
+            type: 'bar',
+            data: severityData,
+            options: severityOptions
+        });
+
+        function clickHandler(click) {
+            const points = severityChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(severityDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        severityChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END SUMMARY CHART -->
+
+    <!-- DURATION CHART -->
+    <script>
+
+        // Options define for display value on top of bars
+        const durationDetailsReports = [
+                {title: "Under 1 second", link: "9afdb3fcaad18c7879e63277bfebf87214c823837e332e6f3089fe624798e07a.html"},
+                {title: "1 to 10 seconds", link: "4749d4c37791fd90194139cea61b3a10c6014e5db9e79a2c8c1a9770c3029a24.html"},
+                {title: "10 to 30 seconds", link: "9f489dc6e0b53bc22d03945e5d3b25c16b1fa4919b7ffa2be8340d54885f9159.html"},
+                {title: "30 to 60 seconds", link: "039992ae44d6da2bdbe065f41de708a28d04d56951189649d0d9d49d64edaf8a.html"},
+                {title: "1 to 2 minutes", link: "7b7af52e857353035b3cbd91353b64f191aae6c89cc67a18ecfe4c9a90a042a4.html"},
+                {title: "2 to 5 minutes", link: "9efe7a0492a834720295f7936bde368284d44aca31b11cb438bda126056f38e7.html"},
+                {title: "5 to 10 minutes", link: "91fe0376621d4d1fb47293cf5a4222bc1ff244dd364b654cbc783ed7831c3605.html"},
+                {title: "10 minutes or over", link: "5c770f16b31eed2c5f118dc794a28d5c626b4751c7198430037078c98b5251d2.html"},
+        ]
+        // The Severity bar chart
+        const durationChartCtx = document.getElementById('durationChart');
+
+        // Options define for display value on top of bars
+
+        const durationData = {
+            labels: ['Under 1 second','1 to 10 seconds','10 to 30 seconds','30 to 60 seconds','1 to 2 minutes','2 to 5 minutes','5 to 10 minutes','10 minutes or over'],
+            datasets: [{
+                label: 'Number of tests per duration',
+                fill: false,
+                data: ['13','1','0','0','0','0','0','0'],
+                backgroundColor: 'rgba(83, 146, 255,0.5)',
+                borderColor: 'rgba(83, 146, 255, 1)',
+            }]
+        }
+        const durationOptions = {
+            responsive: true,
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value > 0) {
+                            return value;
+                        } else {
+                            return '';
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                    callbacks: {
+                        label: (data) => {
+                            return data.parsed.y + ' tests'
+                        }
+                    },
+                },
+            },
+        }
+
+        const durationChart = new Chart(durationChartCtx, {
+            type: 'bar',
+            data: durationData,
+            options: durationOptions
+        });
+
+        function durationClickHandler(click) {
+            const points = durationChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(durationDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+
+        durationChartCtx.onclick = durationClickHandler;
+    </script>
+    <!-- END DURATION CHART -->
+</body>
+</html>
