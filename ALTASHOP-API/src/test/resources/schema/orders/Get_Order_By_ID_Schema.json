@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome",
+  "definitions": {
+    "Welcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "title": "Welcome"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "User": {
+          "$ref": "#/definitions/User"
+        },
+        "Product": {
+          "$ref": "#/definitions/Product"
+        },
+        "Quantity": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ID",
+        "Product",
+        "Quantity",
+        "User"
+      ],
+      "title": "Data"
+    },
+    "Product": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "integer"
+        },
+        "Ratings": {
+          "type": "integer"
+        },
+        "Categories": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "Categories",
+        "Description",
+        "ID",
+        "Name",
+        "Price",
+        "Ratings"
+      ],
+      "title": "Product"
+    },
+    "User": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "Fullname": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Email",
+        "Fullname",
+        "ID",
+        "Password"
+      ],
+      "title": "User"
+    }
+  }
+}

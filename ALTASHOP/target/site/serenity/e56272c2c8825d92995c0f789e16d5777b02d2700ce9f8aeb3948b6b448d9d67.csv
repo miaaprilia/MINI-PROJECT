@@ -1,8 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Login User","As a user I can login with a valid credentials","ERROR","2023-10-18T18:28:22.491336+07:00[Asia/Jakarta]","0.0","1.75"
-"Login User","As a user I can't login without path","ERROR","2023-10-18T18:28:24.353608+07:00[Asia/Jakarta]","0.0","0.07"
-"Login User","As a user I can't login if I don't fill in the login request","ERROR","2023-10-18T18:28:24.450744+07:00[Asia/Jakarta]","0.0","0.06"
-"Login User","As a user I can't login with an invalid email","ERROR","2023-10-18T18:28:24.762693+07:00[Asia/Jakarta]","0.0","0.06"
-"Login User","As a user I can't login with an invalid password","ERROR","2023-10-18T18:28:24.838869+07:00[Asia/Jakarta]","0.0","0.07"
-"Get All Products","As a user I can get all product with valid path","ERROR","2023-10-18T18:28:25.164221+07:00[Asia/Jakarta]","0.0","0.08"
-"Get All Products","As a user I can't get all product without path","ERROR","2023-10-18T18:28:25.259198+07:00[Asia/Jakarta]","0.0","0.06"
