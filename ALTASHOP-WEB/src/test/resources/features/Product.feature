@@ -51,4 +51,11 @@ Feature: Product
     And I rating in arrange 5 star symbol
     Then I can see the submitted ratings
 
-  #Scenario Negative
+  Scenario: As a user I can add and remove products to the cart
+    Given I set the endpoint on the home page without login
+    When I select 1 or more products on the home page
+    And I tap the buy button
+    And I tap the cart button at the top right of the page
+    And I added and then remove products from the cart
+    Then I see message appear "Order is empty!" in order page
+

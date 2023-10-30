@@ -42,6 +42,13 @@ public class ProductPage extends PageObject {
         return By.xpath("/html/body/div/div/main/div/div/div/div/div/div/div/button[5]");
     }
 
+    private By plusbutton() {
+        return By.xpath("/html/body/div/div[1]/main/div/div/div[1]/div/div[1]/div[2]/button[2]");
+    }
+    private By minusbutton() {
+        return By.xpath("/html/body/div/div[1]/main/div/div/div[1]/div/div[1]/div[2]/button[1]");
+    }
+
     @Step
     public boolean validateOnProductPage() {
         return $(cartButton()).isDisplayed();
@@ -99,5 +106,11 @@ public class ProductPage extends PageObject {
     @Step
     public void ratingInArrange5StarSymbol() {
         $(starFive()).click();
+    }
+
+    @Step
+    public void addedAndThenRemoveProductFromTheCart() {
+        $(plusbutton()).click();
+        $(minusbutton()).click();
     }
 }

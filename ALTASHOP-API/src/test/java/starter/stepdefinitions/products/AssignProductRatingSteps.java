@@ -90,7 +90,7 @@ public class AssignProductRatingSteps {
     @Then("I received status code 500 Internal Server Error in request to rating product")
     public void receivedStatusCode500InternalServerErrorRatingProduct() { assignProductRating.receivedStatusCode500InternalServerErrorRatingProduct();}
 
-    @And("I received error (SQLSTATE 23514) assign product ratings response")
+    @And("I received error SQLSTATE 23514 assign product ratings response")
     public void receivedErrorSQLSTATEAssignProductRatingsResponse() {
         assignProductRating.receivedErrorSQLSTATEAssignProductRatingsResponse();
     }

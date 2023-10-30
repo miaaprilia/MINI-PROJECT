@@ -2,14 +2,7 @@ package starter.user.product_categories;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import starter.utils.JsonSchema;
-import starter.utils.JsonSchemaHelper;
-import starter.utils.ProductGetter;
-
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.Matchers.notNullValue;
-import static org.hamcrest.Matchers.nullValue;
 
 public class DeleteCategoryByID {
     private static final String url = "https://altashop-api.fly.dev/api/";

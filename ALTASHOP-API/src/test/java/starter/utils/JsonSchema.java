@@ -13,9 +13,7 @@ public class JsonSchema {
     public static final String Get_Product_Comments_Response_Schema =  "schema/products/Get_Product_Comments_Schema.json";
     public static final String Create_New_Product_Response_Schema =  "schema/products/Create_New_Product_Schema.json";
     public static final String Assign_Product_Rating_Response_Schema =  "schema/products/Assign_Product_Rating_Schema.json";
-    public static final String Assign_Product_Rating_With_More_Than_5_Rating_Response_Schema =  "schema/products/Assign_Product_Rating_With_More_Than_5_Rating_Schema.json";
     public static final String Create_Comment_Product_Response_Schema =  "schema/products/Create_Comment_Product_Schema.json";
-    public static final String Create_Comment_Product_Blank_Request_Response_Schema =  "schema/products/Create_Comment_Product_Blank_Request_Schema.json";
     public static final String Delete_Product_By_ID_Response_Schema =  "schema/products/Delete_Product_By_ID_Schema.json";
     public static final String Get_All_Categories_Response_Schema =  "schema/product_categories/Get_All_Categories_Schema.json";
     public static final String Get_Category_By_ID_Response_Schema =  "schema/product_categories/Get_Category_By_ID_Schema.json";

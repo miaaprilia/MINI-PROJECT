@@ -31,7 +31,7 @@ public class RegisterSteps {
 
     @And ("I enter a valid email format")
     public void enterValidEmailFormat() {
-        registerPage.inputEmail("testeraltashop_web5@gmail.com");
+        registerPage.inputEmail("testeraltashop_web9@gmail.com");
     }
 
     @And("I enter password")

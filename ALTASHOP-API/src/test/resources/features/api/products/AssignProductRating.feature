@@ -41,4 +41,4 @@ Feature: Assign Product Rating
     And I enter product rating data with a request for the number of ratings exceeding > 5
     And I send request to assign product with more than 5 rating
     Then I received status code 500 Internal Server Error in request to rating product
-    And I received error (SQLSTATE 23514) assign product ratings response
+    And I received error SQLSTATE 23514 assign product ratings response

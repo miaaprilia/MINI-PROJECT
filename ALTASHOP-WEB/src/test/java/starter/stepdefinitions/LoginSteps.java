@@ -75,7 +75,7 @@ public class LoginSteps {
 
     @And("I enter invalid password")
     public void enterInvalidPassword() {
-        loginPage.inputPassword("test");
+        loginPage.inputPassword("tes");
     }
 
     @Then("I see error message appear \"email or password is invalid\" in login page")
@@ -88,6 +88,6 @@ public class LoginSteps {
 
     @And("I enter a password that has not been registered")
     public void enterPasswordThatHasNotBeenRegistered() {
-        loginPage.inputEmail("test");
+        loginPage.inputPassword("test");
     }
 }

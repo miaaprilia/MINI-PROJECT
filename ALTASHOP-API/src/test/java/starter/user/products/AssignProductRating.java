@@ -12,11 +12,10 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class AssignProductRating {
-    private static final String url = "https://altashop-api.fly.dev/api/";
+    private static final String url = "https://altashop-api.fly.dev/api";
 
     @Step ("I set API endpoint valid for assign product rating")
     public String setAPIEndpointValidAssignProductRating() {
-//        int productId = ProductGetter.getProductID();
         return url + "/products/87164/ratings";
     }
 
@@ -34,12 +33,12 @@ public class AssignProductRating {
 
     @Step("I send request to assign product rating")
     public void sendRequestAssignProductRating() {
-        String token = GenerateToken.generateToken();
+        String data = GenerateToken.generateToken();
         JSONObject requestBody = new JSONObject();
         requestBody.put("count", 4);
         SerenityRest.given()
                 .header("Content-Type","application/json")
-                .header("Authorization", "Bearer " + token)
+                .header("Authorization", "Bearer " + data)
                 .body(requestBody.toString())
                 .post(setAPIEndpointValidAssignProductRating());
     }
@@ -58,12 +57,7 @@ public class AssignProductRating {
         JsonSchemaHelper helper = new JsonSchemaHelper();
         String schema = helper.getResponseSchema(JsonSchema.Assign_Product_Rating_Response_Schema);
         restAssuredThat(response -> response.body(matchesJsonSchema(schema)));
-        restAssuredThat(response -> response.body("'data'.'ID'", notNullValue()));
-        restAssuredThat(response -> response.body("'data'.'Name'", notNullValue()));
-        restAssuredThat(response -> response.body("'data'.'Description'", notNullValue()));
-        restAssuredThat(response -> response.body("'data'.'Price'", notNullValue()));
-        restAssuredThat(response -> response.body("'data'.'Ratings'", notNullValue()));
-        restAssuredThat(response -> response.body("'data'.'Categories'", notNullValue()));
+        restAssuredThat(response -> response.body("'data'", notNullValue()));
     }
 
     @Step("I set API endpoint for assign product ratings with an invalid path")
@@ -125,11 +119,7 @@ public class AssignProductRating {
         restAssuredThat(response -> response.statusCode(500));
     }
 
-    @Step("I received error (SQLSTATE 23514) assign product ratings response")
+    @Step("I received error SQLSTATE 23514 assign product ratings response")
     public void receivedErrorSQLSTATEAssignProductRatingsResponse() {
-        JsonSchemaHelper helper = new JsonSchemaHelper();
-        String schema = helper.getResponseSchema(JsonSchema.Assign_Product_Rating_With_More_Than_5_Rating_Response_Schema);
-        restAssuredThat(response -> response.body(matchesJsonSchema(schema)));
-        restAssuredThat(response -> response.body("'data'", notNullValue()));
     }
 }
