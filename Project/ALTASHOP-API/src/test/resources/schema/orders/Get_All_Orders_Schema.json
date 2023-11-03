@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome",
+  "definitions": {
+    "Welcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum"
+          }
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "title": "Welcome"
+    },
+    "Datum": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Product": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "integer"
+        },
+        "Quantity": {
+          "type": "integer"
+        },
+        "Subtotal": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Price",
+        "Product",
+        "Quantity",
+        "Subtotal"
+      ],
+      "title": "Datum"
+    }
+  }
+}
