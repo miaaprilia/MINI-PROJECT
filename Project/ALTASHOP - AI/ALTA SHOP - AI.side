@@ -1,0 +1,820 @@
+{
+  "id": "1c6c9a63-0a57-4588-9443-fedaf37ae340",
+  "version": "2.0",
+  "name": "ALTA SHOP - AI",
+  "url": "https://alta-shop.vercel.app/auth/login",
+  "tests": [{
+    "id": "464eddda-0c86-4630-9d4f-ebbfc9129342",
+    "name": "Login Feature - Invalid Email",
+    "commands": [{
+      "id": "2830e059-19b9-49d4-8620-dd9bf1096b54",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7403d313-2e12-49c4-bb44-404e85bd2d62",
+      "comment": "",
+      "command": "eyesSetViewportSize",
+      "target": "1680x650",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bab6b2cb-ef6f-4ddb-97aa-8fd5d48f6b51",
+      "comment": "",
+      "command": "eyesCheckWindow",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f001122-3845-4f76-8074-15bb16edc058",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6ab8fe5-30a5-4249-9170-49d4bbc31756",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "miaaprilia28@gmail.com"
+    }, {
+      "id": "57fc192f-bd90-4969-a8df-50e6ca23034c",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ffea60b4-9cc4-4f4d-8720-de5781fb365b",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "cec448fa-327d-4fbb-a2de-d9d0e6245461",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c843152-0417-4a1b-a254-d66213cd5445",
+      "comment": "",
+      "command": "click",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2adbe67c-f3bd-404f-a2ec-537c4a413262",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.v-btn--disabled > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--disabled > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61eeb4c4-3205-4458-be71-f4707e8a8bdd",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-alert__content",
+      "targets": [
+        ["css=.v-alert__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "de310b3a-5d73-4a9b-94d7-4828cd719f5e",
+    "name": "Login Feature - Valid Credentials",
+    "commands": [{
+      "id": "4d636685-8c48-46a2-9a6a-6f7ebe6194ba",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d030f1f9-93e1-4ad3-866f-f5c479cd93b4",
+      "comment": "",
+      "command": "eyesSetViewportSize",
+      "target": "1680x550",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e22130bf-a265-4033-9dfa-4c245e276a7e",
+      "comment": "",
+      "command": "eyesCheckWindow",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6af6db9-d01f-4100-b7fa-6f98590b2d33",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1116c535-36e7-47cb-9252-72d8440e0f58",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "miaaprilia2803@gmail.com"
+    }, {
+      "id": "442176f4-97cf-4d50-a29b-2d21bf513dad",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1368187-56c5-44a1-b440-360e9b9d56d9",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "d720bf86-47ce-427b-9df3-372a5a6449f6",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c201e1e0-e03a-4c4d-aef0-e094f88d2646",
+      "comment": "",
+      "command": "click",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c47d64fd-a7f1-4172-94eb-b8ca65f95f3e",
+    "name": "Login Feature - Invalid Password",
+    "commands": [{
+      "id": "3d6eb0ba-e115-44ca-8147-b473e919e243",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f177d9b0-d641-4c8a-8e84-cdf0c35f461a",
+      "comment": "",
+      "command": "eyesSetViewportSize",
+      "target": "1680x450",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9739d947-8f98-45d6-be96-d569dcebe02e",
+      "comment": "",
+      "command": "eyesCheckWindow",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "20aa7349-ba49-4f07-9373-e269d0b6b819",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "403aacbb-f83a-4cfd-aa9c-aba303019553",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "miaaprilia2803@gmail.com"
+    }, {
+      "id": "a40627fc-56de-4358-a006-5d6fdd26ea03",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4299b222-9f87-4356-9040-253f8d002de8",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "tes"
+    }, {
+      "id": "a1206bf4-4194-4951-8b6d-8dcdbd989519",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7789e9d-80a9-496b-a630-fa59a99d0c9e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd113109-d00e-41d2-852a-f796757235d2",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2358736b-1583-4125-a339-a076e497706a",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-alert__content",
+      "targets": [
+        ["css=.v-alert__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9392480d-0b1c-4994-8b16-be1162732bb5",
+    "name": "Login Feature - Blank Email",
+    "commands": [{
+      "id": "2a7d1e6f-21d2-4d62-8b7a-3e2c22274c9b",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08164e83-abb6-47fb-af11-28f58fbf241b",
+      "comment": "",
+      "command": "eyesSetViewportSize",
+      "target": "1680x350",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2127ada-416b-4536-8b3e-f6d85005269c",
+      "comment": "",
+      "command": "eyesCheckWindow",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59a1d5fd-a5e0-4d42-a333-4c3c93239d18",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c94c28b0-d13c-4597-8fdd-7383a7e8de9c",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0c2a305-b81e-48f3-9098-aa4101fc5942",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c78cec41-4d3c-45a0-934d-21b6180d971f",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "94514d0b-97a9-4c91-b4da-0972a869199b",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "828e3f3f-97d3-4f1d-b70a-587763473774",
+      "comment": "",
+      "command": "click",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95f744be-3e18-4e3e-af5e-0226bcf86c37",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dba4e784-f382-4b5e-8252-b799b0b9e4a5",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-alert__content",
+      "targets": [
+        ["css=.v-alert__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4274a20a-c7b3-4b4c-b470-eccf83f857f9",
+    "name": "Login Feature - Blank Password",
+    "commands": [{
+      "id": "6490f8ae-c10a-4de6-9733-89fd30ab6ad9",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6cf3124-1845-4880-ad82-081d7bb4b143",
+      "comment": "",
+      "command": "eyesSetViewportSize",
+      "target": "1680x350",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26b394cc-d88e-467c-8c07-827b38a1368f",
+      "comment": "",
+      "command": "eyesCheckWindow",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8dcefd99-3edc-4037-b611-f05f4b5b2d8d",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bcbc2fb-39d2-4863-a329-ec69b1d069a6",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "miaaprilia2803@gmail.com"
+    }, {
+      "id": "fe4ce2fc-e387-44a3-95db-2c3fd6cc7205",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2cb82806-950a-43c2-9a7e-bfbdeb3c9f98",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25773250-0fce-4621-9851-b4173f7732b2",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "46f156fe-d25b-436e-b5bf-221b6c4d9eda",
+      "comment": "",
+      "command": "click",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "075529db-67cb-4fd1-b74c-4804f4cdea7e",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.v-btn--disabled > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--disabled > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95638786-6c4b-49d2-9544-a693ae1ecb6c",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-alert__content",
+      "targets": [
+        ["css=.v-alert__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "77aeebef-f3b7-4e65-b680-82f217301adc",
+    "name": "Login Feature - Credentials Not Registered in the Database",
+    "commands": [{
+      "id": "7c92e2a2-b017-4c2a-9293-4a74eb6b2393",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6db9d271-84b4-47c8-bbdf-75a3d51ac732",
+      "comment": "",
+      "command": "eyesSetViewportSize",
+      "target": "1680x350",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "63290601-9bea-45be-a147-b9f9cf4ec74f",
+      "comment": "",
+      "command": "eyesCheckWindow",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ffd345dd-3385-4588-a118-dcdabe73fa55",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4133224f-0596-4422-8ab1-6023c8d6d818",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-19",
+      "targets": [
+        ["id=input-19", "id"],
+        ["css=#input-19", "css:finder"],
+        ["xpath=//input[@id='input-19']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "creadentialsnotregister"
+    }, {
+      "id": "94c36b35-9cec-4b2d-a92f-60fd3c9921dc",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d565caef-be03-4964-aefb-51fc8c7ba59f",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-22",
+      "targets": [
+        ["id=input-22", "id"],
+        ["css=#input-22", "css:finder"],
+        ["xpath=//input[@id='input-22']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "d189d026-c4b3-40c3-85f9-e05622d46fb5",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9d698b4-52af-4c28-9186-398c9ab54f99",
+      "comment": "",
+      "command": "click",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "332e577a-6d6b-4788-997a-f6eb5551f271",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.v-btn--is-elevated > .v-btn__content",
+      "targets": [
+        ["css=.v-btn--is-elevated > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/form/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e91462ed-6b73-4e80-b0e8-ad54ca6b6528",
+      "comment": "",
+      "command": "eyesCheckElement",
+      "target": "css=.v-alert__content",
+      "targets": [
+        ["css=.v-alert__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "db2796b8-1795-4c53-bbff-3e187912529f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://alta-shop.vercel.app/auth/login"],
+  "plugins": [{
+    "id": "fbnkflkahhlmhdgkddaafgnnokifobik",
+    "name": "Applitools",
+    "version": "1.0.0"
+  }],
+  "snapshot": {
+    "globalConfig": {
+      "snapshot": "const { Eyes, Target } = require('@applitools/eyes-selenium');global.Target = Target;const { ConsoleLogHandler, BatchInfo, AccessibilityLevel, AccessibilityGuidelinesVersion } = require('@applitools/eyes-sdk-core');let apiKey = process.env.APPLITOOLS_API_KEY, serverUrl = process.env.APPLITOOLS_SERVER_URL, appName = \"ALTA SHOP - AI\", batchId = configuration.runId, batchName;"
+    },
+    "tests": [{
+      "id": "464eddda-0c86-4630-9d4f-ebbfc9129342",
+      "snapshot": {
+        "commands": {
+          "7403d313-2e12-49c4-bb44-404e85bd2d62": "await eyes.setViewportSize({width: 1680, height: 650});",
+          "bab6b2cb-ef6f-4ddb-97aa-8fd5d48f6b51": "if (!opts.isNested) {await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.window().webHook(preRenderHook).fully(true));}",
+          "8f001122-3845-4f76-8074-15bb16edc058": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-19`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-19`)).webHook(preRenderHook));}",
+          "57fc192f-bd90-4969-a8df-50e6ca23034c": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-22`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-22`)).webHook(preRenderHook));}",
+          "cec448fa-327d-4fbb-a2de-d9d0e6245461": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-btn--is-elevated > .v-btn__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-btn--is-elevated > .v-btn__content`)).webHook(preRenderHook));}",
+          "61eeb4c4-3205-4458-be71-f4707e8a8bdd": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-alert__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-alert__content`)).webHook(preRenderHook));}"
+        },
+        "setupHooks": ["const _driver = driver;driver = await eyes.open(driver, appName, \"Login Feature - Invalid Email\");global.preRenderHook = \"\";"],
+        "teardownHooks": ["driver = _driver;"]
+      }
+    }, {
+      "id": "de310b3a-5d73-4a9b-94d7-4828cd719f5e",
+      "snapshot": {
+        "commands": {
+          "d030f1f9-93e1-4ad3-866f-f5c479cd93b4": "await eyes.setViewportSize({width: 1680, height: 550});",
+          "e22130bf-a265-4033-9dfa-4c245e276a7e": "if (!opts.isNested) {await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.window().webHook(preRenderHook).fully(true));}",
+          "a6af6db9-d01f-4100-b7fa-6f98590b2d33": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-19`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-19`)).webHook(preRenderHook));}",
+          "442176f4-97cf-4d50-a29b-2d21bf513dad": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-22`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-22`)).webHook(preRenderHook));}",
+          "d720bf86-47ce-427b-9df3-372a5a6449f6": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-btn--is-elevated > .v-btn__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-btn--is-elevated > .v-btn__content`)).webHook(preRenderHook));}"
+        },
+        "setupHooks": ["const _driver = driver;driver = await eyes.open(driver, appName, \"Login Feature - Valid Credentials\");global.preRenderHook = \"\";"],
+        "teardownHooks": ["driver = _driver;"]
+      }
+    }, {
+      "id": "c47d64fd-a7f1-4172-94eb-b8ca65f95f3e",
+      "snapshot": {
+        "commands": {
+          "f177d9b0-d641-4c8a-8e84-cdf0c35f461a": "await eyes.setViewportSize({width: 1680, height: 450});",
+          "9739d947-8f98-45d6-be96-d569dcebe02e": "if (!opts.isNested) {await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.window().webHook(preRenderHook).fully(true));}",
+          "20aa7349-ba49-4f07-9373-e269d0b6b819": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-19`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-19`)).webHook(preRenderHook));}",
+          "a40627fc-56de-4358-a006-5d6fdd26ea03": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-22`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-22`)).webHook(preRenderHook));}",
+          "a1206bf4-4194-4951-8b6d-8dcdbd989519": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-btn--is-elevated > .v-btn__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-btn--is-elevated > .v-btn__content`)).webHook(preRenderHook));}",
+          "2358736b-1583-4125-a339-a076e497706a": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-alert__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-alert__content`)).webHook(preRenderHook));}"
+        },
+        "setupHooks": ["const _driver = driver;driver = await eyes.open(driver, appName, \"Login Feature - Invalid Password\");global.preRenderHook = \"\";"],
+        "teardownHooks": ["driver = _driver;"]
+      }
+    }, {
+      "id": "9392480d-0b1c-4994-8b16-be1162732bb5",
+      "snapshot": {
+        "commands": {
+          "08164e83-abb6-47fb-af11-28f58fbf241b": "await eyes.setViewportSize({width: 1680, height: 350});",
+          "f2127ada-416b-4536-8b3e-f6d85005269c": "if (!opts.isNested) {await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.window().webHook(preRenderHook).fully(true));}",
+          "59a1d5fd-a5e0-4d42-a333-4c3c93239d18": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-19`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-19`)).webHook(preRenderHook));}",
+          "d0c2a305-b81e-48f3-9098-aa4101fc5942": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-22`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-22`)).webHook(preRenderHook));}",
+          "94514d0b-97a9-4c91-b4da-0972a869199b": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-btn--is-elevated > .v-btn__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-btn--is-elevated > .v-btn__content`)).webHook(preRenderHook));}",
+          "dba4e784-f382-4b5e-8252-b799b0b9e4a5": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-alert__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-alert__content`)).webHook(preRenderHook));}"
+        },
+        "setupHooks": ["const _driver = driver;driver = await eyes.open(driver, appName, \"Login Feature - Blank Email\");global.preRenderHook = \"\";"],
+        "teardownHooks": ["driver = _driver;"]
+      }
+    }, {
+      "id": "4274a20a-c7b3-4b4c-b470-eccf83f857f9",
+      "snapshot": {
+        "commands": {
+          "a6cf3124-1845-4880-ad82-081d7bb4b143": "await eyes.setViewportSize({width: 1680, height: 350});",
+          "26b394cc-d88e-467c-8c07-827b38a1368f": "if (!opts.isNested) {await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.window().webHook(preRenderHook).fully(true));}",
+          "8dcefd99-3edc-4037-b611-f05f4b5b2d8d": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-19`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-19`)).webHook(preRenderHook));}",
+          "fe4ce2fc-e387-44a3-95db-2c3fd6cc7205": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-22`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-22`)).webHook(preRenderHook));}",
+          "25773250-0fce-4621-9851-b4173f7732b2": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-btn--is-elevated > .v-btn__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-btn--is-elevated > .v-btn__content`)).webHook(preRenderHook));}",
+          "95638786-6c4b-49d2-9544-a693ae1ecb6c": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-alert__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-alert__content`)).webHook(preRenderHook));}"
+        },
+        "setupHooks": ["const _driver = driver;driver = await eyes.open(driver, appName, \"Login Feature - Blank Password\");global.preRenderHook = \"\";"],
+        "teardownHooks": ["driver = _driver;"]
+      }
+    }, {
+      "id": "77aeebef-f3b7-4e65-b680-82f217301adc",
+      "snapshot": {
+        "commands": {
+          "6db9d271-84b4-47c8-bbdf-75a3d51ac732": "await eyes.setViewportSize({width: 1680, height: 350});",
+          "63290601-9bea-45be-a147-b9f9cf4ec74f": "if (!opts.isNested) {await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.window().webHook(preRenderHook).fully(true));}",
+          "ffd345dd-3385-4588-a118-dcdabe73fa55": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-19`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-19`)).webHook(preRenderHook));}",
+          "94c36b35-9cec-4b2d-a92f-60fd3c9921dc": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.id(`input-22`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.id(`input-22`)).webHook(preRenderHook));}",
+          "d189d026-c4b3-40c3-85f9-e05622d46fb5": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-btn--is-elevated > .v-btn__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-btn--is-elevated > .v-btn__content`)).webHook(preRenderHook));}",
+          "e91462ed-6b73-4e80-b0e8-ad54ca6b6528": "if (!opts.isNested) {await driver.wait(until.elementLocated(By.css(`.v-alert__content`)), configuration.timeout); await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.region(By.css(`.v-alert__content`)).webHook(preRenderHook));}"
+        },
+        "setupHooks": ["const _driver = driver;driver = await eyes.open(driver, appName, \"Login Feature - Credentials Not Registered in the Database\");global.preRenderHook = \"\";"],
+        "teardownHooks": ["driver = _driver;"]
+      }
+    }]
+  },
+  "dependencies": {
+    "@applitools/eyes-selenium": "4.44.0"
+  },
+  "jest": {
+    "extraGlobals": ["Math"]
+  }
+}
